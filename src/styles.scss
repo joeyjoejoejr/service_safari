@@ -1,0 +1,20 @@
+@import "~normalize.css/normalize.css";
+@import "~susy/sass/susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+);
+
+$background: #ffffff;
+$header-background: #e6e7e8;
+$footer-background: #e6e7e8;
+
+.container {
+  @include container(12 center);
+}
+
+header {
+  background: $header-background url('/background.png') no-repeat;
+  min-height: 576px;
+}
