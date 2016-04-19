@@ -295,9 +295,13 @@ h1 {
 
     li {
       font-size: 77%;
-      color: white;
       display: inline-block;
       margin: 3em;
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
       img {
         display: block;
         margin: 1.5em auto;
