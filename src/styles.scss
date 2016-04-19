@@ -1,20 +1,307 @@
 @import "~normalize.css/normalize.css";
 @import "~susy/sass/susy";
 
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Medium.otf');
+}
+
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url('/fonts/Gotham-Bold.otf');
+}
+
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('/fonts/Gotham-Book.otf');
+}
+
+@font-face {
+  font-family: 'Roboto Mono Regular';
+  src: url('/fonts/RobotoMono-Regular.ttf');
+}
+
 $susy: (
   columns: 12,
   gutters: 1/4,
+  clearfix: true,
 );
 
 $background: #ffffff;
 $header-background: #e6e7e8;
 $footer-background: #e6e7e8;
+$light-text: #404041;
+$sb-pink: #ea1767;
 
 .container {
   @include container(12 center);
+  font-family: "Gotham Book";
+  font-size: 13px;
 }
 
-header {
+a { color: $sb-pink; }
+
+h1 {
+  color: $header-background;
+  font-family: "Gotham Bold";
+  font-size: 60px;
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.header {
   background: $header-background url('/background.png') no-repeat;
-  min-height: 576px;
+  background-position: 0 150px;
+  min-height: 753px;
+  clear: right;
+}
+
+.header--title {
+  background-color: rgba(64, 64, 64, 0.72);
+  clear: both;
+  display: inline-block;
+  float: right;
+  padding: 1% 2%;
+  margin-top: 5%;
+}
+
+.header--logo {
+  margin: 2% 0 0 3%;
+}
+
+.header--date {
+  @include span(3 last);
+  color: #6e6e6e;
+  font-family: "Gotham Bold";
+  font-size: 17px;
+  padding-right: 3%;
+  padding-top: 5%;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.header--call-to-action {
+  @include span(6 last);
+  clear: right;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 5%;
+
+  hr {
+    border: none;
+    width: 50px;
+    height: 1px;
+    background-color: black;
+  }
+
+  h2 {
+    color: $light-text;
+    letter-spacing: 2px;
+    font-family: "Roboto Mono Regular";
+    font-size: 123%;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+
+  p {
+    width: 55%;
+    color: $light-text;
+    display: block;
+    line-height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  .header--call-to-action--links {
+    clear: both;
+
+    .header--call-to-action--learn {
+      display: block;
+    }
+
+    .button {
+      background-color: $sb-pink;
+      color: $header-background;
+      display: inline-block;
+      font-family: "Gotham Bold";
+      font-size: 153%;
+      text-transform: uppercase;
+      padding: 1em 2em;
+      margin-top: 2em;
+    }
+  }
+}
+
+.learn {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  padding: 0 5%;
+
+  h2, p {
+    position: relative;
+    z-index: 2;
+ }
+
+  .learn--title {
+    color: white;
+    font-size: 60px;
+    margin-top: 3em;
+    letter-spacing: 0.12em;
+
+    span {
+      background: $sb-pink;
+      clear: left;
+      float: left;
+      display: inline-block;
+      padding: 0.1em;
+      margin-top: -0.1em;
+    }
+  }
+
+  .learn--content {
+    color: white;
+    clear: left;
+    font-size: 17px;
+    line-height: 2em;
+    display: inline-block;
+    @include span(6 first);
+    margin: 2em 0;
+  }
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    opacity: 0.6;
+  }
+}
+
+.details {
+  @include container;
+  padding: 5%;
+  line-height: 2em;
+  height: 40em;
+  overflow: hidden;
+
+  .details--map {
+    @include span(6 first);
+    height: 80%;
+
+    .map {
+      width: 80%;
+      height: 90%;
+      margin: 2em;
+    }
+  }
+  .details--description {
+    @include span(6 last);
+  }
+
+  h2 {
+    font-size: 160%;
+  }
+
+  hr {
+    border: none;
+    width: 50px;
+    height: 2px;
+    background-color: black;
+    margin-left: 0;
+    margin-top: -0.5em;
+  }
+}
+
+.registraion {
+  text-align: center;
+  text-transform: uppercase;
+
+  h2 {
+    font-family: "Gotham Bold";
+    letter-spacing: 0.4em;
+    font-size: 160%;
+  }
+
+  hr {
+    border: none;
+    width: 50px;
+    height: 2px;
+    background-color: black;
+    margin-top: -0.5em;
+  }
+}
+
+.footer {
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $footer-background;
+  padding-top: 5%;
+
+  h2 {
+    font-family: "Gotham Bold";
+    letter-spacing: 0.4em;
+    font-size: 160%;
+  }
+
+  hr {
+    border: none;
+    width: 50px;
+    height: 2px;
+    background-color: black;
+    margin-top: -0.5em;
+    margin-bottom: 6em;
+  }
+
+  .footer--doodad {
+    background-color: $sb-pink;
+    color: white;
+    font-family: "Roboto Mono Regular";
+    font-size: 17px;
+    letter-spacing: 0.4em;
+    padding: 5% 2%;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: -7em;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+
+    .footer--doodad--text {
+      @include span(8 first);
+    }
+
+    .footer--doodad--logo {
+      @include span(3 last);
+      margin: 0 auto;
+
+      img:first-child {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .footer--social {
+    position: relative;
+    background-color: #272526;
+    z-index: 0;
+    padding-top: 9em;
+    margin: 0;
+
+    li {
+      font-size: 77%;
+      color: white;
+      display: inline-block;
+      margin: 3em;
+      img {
+        display: block;
+        margin: 1.5em auto;
+      }
+    }
+  }
 }
