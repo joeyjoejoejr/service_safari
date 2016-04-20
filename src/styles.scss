@@ -310,6 +310,12 @@ h1 {
       @include span(3 last);
       margin: 0 auto;
 
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+
       img:first-child {
         margin-bottom: 1em;
       }
