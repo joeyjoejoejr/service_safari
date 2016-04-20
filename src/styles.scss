@@ -185,8 +185,9 @@ h1 {
 .details {
   @include container;
   padding: 5%;
+  padding-bottom: 0;
   line-height: 2em;
-  height: 40em;
+  height: 45em;
   overflow: hidden;
 
   .details--map {
