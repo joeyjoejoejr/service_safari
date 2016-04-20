@@ -61,9 +61,10 @@ h1 {
 }
 
 .header {
+  @include container(12);
   background: $header-background url('/background.png') no-repeat;
   background-position: 0 150px;
-  min-height: 753px;
+  padding-bottom: 5em;
   clear: right;
 }
 
@@ -93,7 +94,7 @@ h1 {
 
 .header--call-to-action {
   @include span(6 last);
-  clear: right;
+  clear: both;
   font-size: 13px;
   text-align: center;
   margin-top: 5%;
@@ -188,8 +189,8 @@ h1 {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: auto;
+    min-width: 100%;
+    min-height: 100%;
     z-index: 1;
     opacity: 0.6;
   }
@@ -200,16 +201,15 @@ h1 {
   padding: 5%;
   padding-bottom: 0;
   line-height: 2em;
-  height: 45em;
   overflow: hidden;
 
   .details--map {
     @include span(6 first);
-    height: 80%;
+    height: 40em;
 
     .map {
       width: 80%;
-      height: 90%;
+      height: 80%;
       margin: 2em;
     }
   }
@@ -335,6 +335,80 @@ h1 {
         display: block;
         margin: 1.5em auto;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #mobile-override {
+    aside, header, main, footer, div, section, h1, h2, p, iframe, ul {
+      float: left;
+      clear: both;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    hr {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header {
+      background: none;
+    }
+
+    .header--date {
+      text-align: center;
+    }
+
+    .header--title h1 {
+      text-align: center;
+      font-size: 225%;
+    }
+
+    .header--call-to-action,
+    .learn--content,
+    .details,
+    .registration,
+    .footer--doodad--text,
+    .registration--header {
+      padding-left: 5%;
+      padding-right: 5%;
+      text-align: center;
+    }
+
+    .header--call-to-action--learn {
+      margin-top: 2em;
+    }
+
+    .learn--title {
+      font-size: 300%;
+    }
+
+    .learn img {
+      max-width: none;
+    }
+
+    .footer--doodad {
+      margin-top: 3em;
+    }
+
+    iframe.map {
+      pointer-events: none;
     }
   }
 }
