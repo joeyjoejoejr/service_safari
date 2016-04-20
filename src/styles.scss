@@ -17,6 +17,11 @@
 }
 
 @font-face {
+  font-family: 'Gotham Medium';
+  src: url('/fonts/Gotham-Medium.otf');
+}
+
+@font-face {
   font-family: 'Roboto Mono Regular';
   src: url('/fonts/RobotoMono-Regular.ttf');
 }
@@ -32,6 +37,11 @@ $header-background: #e6e7e8;
 $footer-background: #e6e7e8;
 $light-text: #404041;
 $sb-pink: #ea1767;
+
+.temp {
+  color: red;
+  font-weight: bold;
+}
 
 .container {
   @include container(12 center);
@@ -151,6 +161,9 @@ h1 {
     margin-top: 3em;
     letter-spacing: 0.12em;
 
+    span:first-child {
+      font-weight: 100;
+    }
     span {
       background: $sb-pink;
       clear: left;
@@ -202,6 +215,11 @@ h1 {
   }
   .details--description {
     @include span(6 last);
+
+    strong {
+      font-family: "Gotham Bold";
+      font-weight: lighter;
+    }
   }
 
   h2 {
