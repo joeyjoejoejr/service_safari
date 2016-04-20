@@ -262,6 +262,7 @@ h1 {
   iframe {
     display: block;
     margin: 0 auto;
+    height: 950px;
   }
 }
 
@@ -409,6 +410,10 @@ h1 {
 
     iframe.map {
       pointer-events: none;
+    }
+
+    #registration {
+      height: 1150px;
     }
   }
 }
